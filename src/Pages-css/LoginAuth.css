@@ -1,0 +1,57 @@
+.container{
+    position:relative;
+    height:80vh;
+    width:100%;
+}
+.loginauth-container{
+    height:80%;
+    width:50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform: translate(-50%,-50%);  
+}
+.loginauth-form{
+    width:100%;
+    height:100%;
+    padding:10%;
+    position: relative;
+    border-radius: 30px;
+    background: linear-gradient(145deg, #1f242c, #242b34);
+    box-shadow:  15px 15px 30px #15191f, 
+             -15px -15px 30px #2f3743;
+    display:flex;
+    flex-direction:column;
+    justify-content: space-around;
+    align-items: center;
+}
+.loginauth-form h1{
+    margin:1rem 0 1rem 0;
+}
+.loginauth-form .loginauth-links{
+    display:flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-top:5%;
+}
+.loginauth-btn{
+    width:70%;
+    height:50px;
+    border-radius:0.1rem;
+    outline:none;
+    border:none;
+    font-size:1.2rem;
+    background:#00ADB5;
+    cursor:pointer;
+    color:#fff;
+  }
+  .loginauth-link{
+    text-decoration:none;
+    color:#7a7a7a !important;
+    font-size:0.9rem;
+    cursor: pointer;
+  }

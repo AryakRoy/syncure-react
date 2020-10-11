@@ -1,0 +1,49 @@
+nav {
+    padding:0 !important;
+    color: #eeeeee !important;
+    height:20vh;
+}
+img{
+    height:4vw;
+    width:4vw;
+    margin-right: 1vw;
+}
+.navbar-brand{
+    font-size: 2rem;
+}
+.login_div{
+    display: flex;
+}
+.login-avatar{
+    transform:translateY(-20%);
+}
+.MuiPaper-root .MuiMenu-paper .MuiPopover-paper .MuiPaper-elevation8 .MuiPaper-rounded{
+    background-color: #393E46 !important;
+    color: #393E46 !important;
+}
+.MuiList-root .MuiMenu-list .MuiList-padding{
+    background-color: #393E46 !important;
+}
+.menu li{
+    color: rgba(0,0,0,0.3) !important;  
+}
+
+@media screen and (max-width:600px){
+    nav{
+        height:10vh;
+    }
+     .collapse{
+        padding:2.5vw;
+    }
+    img{
+        height:4vh;
+        width:4vh;
+    }
+    .navbar-brand{
+        font-size: 1.25rem;
+    }
+    .login_div{
+        flex-direction: column;
+    }
+
+}
