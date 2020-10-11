@@ -1,0 +1,27 @@
+{
+  "files": {
+    "main.css": "/syncure-react/static/css/main.11e16613.chunk.css",
+    "main.js": "/syncure-react/static/js/main.0808d180.chunk.js",
+    "main.js.map": "/syncure-react/static/js/main.0808d180.chunk.js.map",
+    "runtime-main.js": "/syncure-react/static/js/runtime-main.8da198e0.js",
+    "runtime-main.js.map": "/syncure-react/static/js/runtime-main.8da198e0.js.map",
+    "static/css/2.d9ad5f5c.chunk.css": "/syncure-react/static/css/2.d9ad5f5c.chunk.css",
+    "static/js/2.3094ac43.chunk.js": "/syncure-react/static/js/2.3094ac43.chunk.js",
+    "static/js/2.3094ac43.chunk.js.map": "/syncure-react/static/js/2.3094ac43.chunk.js.map",
+    "index.html": "/syncure-react/index.html",
+    "precache-manifest.4c750feb742e58415accc7acb2eac1b2.js": "/syncure-react/precache-manifest.4c750feb742e58415accc7acb2eac1b2.js",
+    "service-worker.js": "/syncure-react/service-worker.js",
+    "static/css/2.d9ad5f5c.chunk.css.map": "/syncure-react/static/css/2.d9ad5f5c.chunk.css.map",
+    "static/css/main.11e16613.chunk.css.map": "/syncure-react/static/css/main.11e16613.chunk.css.map",
+    "static/js/2.3094ac43.chunk.js.LICENSE.txt": "/syncure-react/static/js/2.3094ac43.chunk.js.LICENSE.txt",
+    "static/media/Group 3.svg": "/syncure-react/static/media/Group 3.ff489b9e.svg",
+    "static/media/logo.png": "/syncure-react/static/media/logo.f9f9e162.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.8da198e0.js",
+    "static/css/2.d9ad5f5c.chunk.css",
+    "static/js/2.3094ac43.chunk.js",
+    "static/css/main.11e16613.chunk.css",
+    "static/js/main.0808d180.chunk.js"
+  ]
+}
