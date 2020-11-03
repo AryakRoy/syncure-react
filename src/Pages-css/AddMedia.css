@@ -1,0 +1,76 @@
+.file-input{
+    display: none;
+}
+#file-preview{
+    position:absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 50%;
+    height:50%;
+}
+.thumbnail-wrapper{
+    position:absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 50%;
+    height:50%;
+}
+.react-pdf__Page{
+    width:100%;
+    height: 100%;
+}
+.react-pdf__Document{
+    width:100%;
+    height: 100%;
+}
+canvas{
+    position:absolute;
+    top: 10%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 100%;
+    height:100%;
+}
+.react-pdf__Page__canvas{
+    width:100%;
+    height: 100%;
+}
+.react-pdf__Page__textContent{
+    width:100%;
+    height: 100%;
+}
+.add-media-container{
+    width:100%;
+    height:80vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.add-media-container img{
+    position:absolute;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 30%;
+    height:30%;
+    object-fit: cover;
+}
+.previewer{
+    padding: 10%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center !important;
+}
+.add-media-container h5{
+    text-align: center;
+}
+.buttons{
+    flex:0.33;
+    display: flex;
+    width: 50%;
+    justify-content: space-around;
+}

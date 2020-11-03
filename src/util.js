@@ -32,7 +32,10 @@ export const useStyles = makeStyles(() => ({
     eyeButton: {
         "&": {color: "#eeeeee"},
         "&:hover": { color: "#00ADB5" },
-        "&:focus": { color: "#00ADB5" }
+        "&:focus": { color: "#00ADB5" },
+        "& .MuiIconButton-label":{color: "#eeeeee"},
+        "& .MuiIconButton-label:hover":{color: "#00ADB5"},
+        "& .MuiIconButton-label:focus":{color: "#00ADB5"}
     },
     avatar: {
       margin: 10,
@@ -76,5 +79,11 @@ export const useStyles = makeStyles(() => ({
     messageIcon:{
       width:'50px',
       height:'50px',
-    }
+    },
+    avataricon2:{
+      color: '#eeeeee',
+      backgroundColor: '#00ADB5',
+      width:'70px',
+      height:"70px"
+    },
   }));

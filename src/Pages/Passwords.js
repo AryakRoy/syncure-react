@@ -11,6 +11,7 @@ import Tooltip from '@material-ui/core/Tooltip';
 import "../Pages-css/Passwords.css"
 import Loading from "../Pages/Loading.js"
 import {useStyles} from "../util.js"
+import "../Pages-css/Passwords.css"
 function Passwords() {
     const classes = useStyles();
     const [passwords, setpasswords] = useState([]);
@@ -128,6 +129,12 @@ function Passwords() {
                 </Link>
                 </div>
                 <div className="passwords-field">
+                    {passwords?.length === 0 ?(
+                        <div>
+                            <h4>No Stored Passwords</h4>
+                        </div>
+                    ): (
+                        <div className="passwords">
                     {passwords.map((password,index) => {
                         let dot_code = "*".repeat(password.code.length);
                         console.log(dot_code);
@@ -141,6 +148,8 @@ function Passwords() {
                             Delete={Del_confirm}
                         />
                     })}
+                    </div>
+                    )} 
                 </div>
             </div>
         )

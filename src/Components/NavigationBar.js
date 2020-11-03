@@ -80,7 +80,7 @@ function NavigationBar() {
     }
     return (
         
-            <Navbar collapseOnSelect expand="lg" variant="dark" sticky="top">
+            <Navbar collapseOnSelect expand="lg" variant="dark">
             <Navbar.Brand href="/"><img src={logo} alt ="Syncure Logo" className="navbar__logo_image"/>Syncure</Navbar.Brand>
             <Navbar.Toggle aria-controls="responsive-navbar-nav" />
             <Navbar.Collapse id="responsive-navbar-nav" className="justify-content-end">

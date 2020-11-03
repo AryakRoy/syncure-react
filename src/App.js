@@ -20,6 +20,7 @@ import AdminLogin from "./Pages/AdminLogin.js"
 import AdminLoginAuth from "./Pages/AdminLoginAuth.js"
 import Passwords from "./Pages/Passwords.js"
 import Files from "./Pages/Files.js"
+import AddMedia from "./Pages/AddMedia.js"
 import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
 
 
@@ -59,6 +60,7 @@ function App() {
         <Route path="/AdminLogin" exact component={AdminLogin} />
         <Route path="/AdminLoginAuth" exact component={AdminLoginAuth} />
         <Route path="/AddPassword" exact component={AddPassword} />
+        <Route path="/AddMedia" exact component={AddMedia} />
         <Route path="/About" exact component={About} />
         <Route path="/ResetPassword" exact component={ResetPassword} />
         <Route path="/ForgotPassword" exact component={ForgotPassword} />

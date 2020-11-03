@@ -2,6 +2,7 @@ nav {
     padding:0 !important;
     color: #eeeeee !important;
     height:20vh;
+    background-color: #222831 !important;
 }
 img{
     height:4vw;
@@ -16,13 +17,6 @@ img{
 }
 .login-avatar{
     transform:translateY(-20%);
-}
-.MuiPaper-root .MuiMenu-paper .MuiPopover-paper .MuiPaper-elevation8 .MuiPaper-rounded{
-    background-color: #393E46 !important;
-    color: #393E46 !important;
-}
-.MuiList-root .MuiMenu-list .MuiList-padding{
-    background-color: #393E46 !important;
 }
 .menu li{
     color: rgba(0,0,0,0.3) !important;  
