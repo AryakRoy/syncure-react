@@ -13,7 +13,7 @@ import {FilePreviewerThumbnail} from 'react-file-previewer';
 import { Redirect } from 'react-router-dom';
 function AddMedia() {
     const classes  =useStyles();
-    const [file, setfile] = useState({ url: "" });
+    const [file, setfile] = useState([]);
     const [redirect_state, setredirect_state] = useState(false);
     const [file_name, setfile_name] = useState("");
     const [error_state, seterror_state] = useState(false);
@@ -24,17 +24,7 @@ function AddMedia() {
         errormessage:""
     });
     const onFileChange = event => {
-        const fileReader = new FileReader();
-        console.log(event.target.files);
-        const file = event.target.files[0];
-        console.log(file);
-        console.log(event.target.value);
-        fileReader.readAsDataURL(file)
-        console.log(file);
-        setfile_name(event.target.files[0].name);
-        fileReader.onload = fileLoad => {
-            setfile({ url: fileLoad.target.result });
-        };
+        setfile(event.target.files[0]);
         setupload_hide(false);
     };
     function handleChange(event){
@@ -43,26 +33,21 @@ function AddMedia() {
     }
     const handleSubmit = () => {
         if(description.length > 0 ){
-            var data = new FormData();
-            const fileReader = new FileReader();
-            var content;
-            const handleFileRead = (e) => {
-                content = fileReader.result;
-                console.log(content);
-                // … do something with the 'content' …
-              };
+            console.log("hello")
+            const data = new FormData();
             data.append('description', 'sample media');
-            data.append('media', content);
-            console.log(data);
+            data.append('media', file);
             var config = {
-              method: 'post',
-              url: 'https://syncure-app-api.herokuapp.com/api/article/addMedia',
               headers: { 
                 'Authorization': 'Bearer ' + localStorage.getItem('token'), 
-                ...data.getHeaders()
-              },
-              data : data
+              }
             };
+            console.log(data)
+            Axios.post("https://syncure-app-api.herokuapp.com/api/article/addMedia",data,{config}).then(res => {
+                console.log("Request Sent!")
+            }).catch(err =>{
+                console.log("Axios Error",err)
+            })
         }
         else{
             setvalidate({
