@@ -43,7 +43,13 @@ function AddMedia() {
               }
             };
             console.log(data)
-            Axios.post("https://syncure-app-api.herokuapp.com/api/article/addMedia",data,{config}).then(res => {
+            Axios.post("https://syncure-app-api.herokuapp.com/api/article/addMedia",{
+                headers: { 
+                    'Authorization': 'Bearer ' + localStorage.getItem('token'), 
+                    "Access-Control-Allow-Origin": "*"
+                  },
+                data: data,
+            }).then(res => {
                 console.log("Request Sent!")
             }).catch(err =>{
                 console.log("Axios Error",err)
