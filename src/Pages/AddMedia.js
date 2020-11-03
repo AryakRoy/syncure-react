@@ -6,10 +6,9 @@ import ArrowUpwardIcon from '@material-ui/icons/ArrowUpward';
 import EditIcon from '@material-ui/icons/Edit';
 import {useStyles} from "../util.js"
 import Axios from "axios"
-import fs from "fs"
+import Loading from "../Pages/Loading.js"
 import FormData from "form-data"
 import {TextField} from "@material-ui/core"
-import {FilePreviewerThumbnail} from 'react-file-previewer';
 import { Redirect } from 'react-router-dom';
 function AddMedia() {
     const classes  =useStyles();
@@ -19,13 +18,17 @@ function AddMedia() {
     const [error_state, seterror_state] = useState(false);
     const [upload_hide, setupload_hide] = useState(true);
     const [description, setdescription] = useState("");
+    const [open, setopen] = useState(false);
     const [validate, setvalidate] = useState({
         errorstate:false,
         errormessage:""
     });
     const onFileChange = event => {
-        setfile(event.target.files[0]);
-        setupload_hide(false);
+        if(event.target.files[0]){
+            setfile(event.target.files[0]);
+            setfile_name(event.target.files[0].name);
+            setupload_hide(false);
+        } 
     };
     function handleChange(event){
         console.log(description);
@@ -33,25 +36,30 @@ function AddMedia() {
     }
     const handleSubmit = () => {
         if(description.length > 0 ){
-            console.log("hello")
+            setopen(true);
             const data = new FormData();
-            data.append('description', 'sample media');
+            data.append('description', description);
             data.append('media', file);
-            var config = {
-              headers: { 
-                'Authorization': 'Bearer ' + localStorage.getItem('token'), 
-              }
-            };
             console.log(data)
-            Axios.post("https://syncure-app-api.herokuapp.com/api/article/addMedia",{
+            Axios.post("https://syncure-app-api.herokuapp.com/api/article/addMedia",data,{
                 headers: { 
-                    'Authorization': 'Bearer ' + localStorage.getItem('token'), 
+                    Authorization: 'Bearer ' + localStorage.getItem('token'), 
                     "Access-Control-Allow-Origin": "*"
                   },
-                data: data,
             }).then(res => {
+                console.log(res);
                 console.log("Request Sent!")
+                if(res.data.status === "success"){
+                    setopen(false);
+                    setredirect_state(true);
+                }
+                else{
+                    setopen(false);
+                    seterror_state(true);
+                }
             }).catch(err =>{
+                setopen(false);
+                seterror_state(true);
                 console.log("Axios Error",err)
             })
         }
@@ -64,7 +72,7 @@ function AddMedia() {
     }
     if(localStorage.getItem('token')){
         if(redirect_state){
-            return <Redirect to="/Files" />
+            return <Redirect to="/Media" />
         }
         else if(error_state){
             return <Redirect to="/Error" />
@@ -72,13 +80,10 @@ function AddMedia() {
         else{
             return (
                 <div className="add-media-container"> 
+                  {open ? <Loading open={open}/>: null}
                   <div className="previewer">
-                  {file.url === "" ? (<h5>No file choosen</h5>
+                  {file_name === "" ? (<h5>No file choosen</h5>
                     ):( <div>
-                        <FilePreviewerThumbnail
-                        id="file-preview"
-                        file={file}
-                        />
                         <h5>{file_name}</h5>
                         <TextField 
                               error ={validate.errorstate ? true: false}

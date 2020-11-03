@@ -411,7 +411,7 @@ function Dashboard() {
                     </div>
                     <div className="profile-buttons">
                         <div className="profile-button">
-                        <Link to="/Files">
+                        <Link to="/Media">
                         <Fab
                         variant="extended"
                         style={{
@@ -422,7 +422,7 @@ function Dashboard() {
                         }}
                         >
                         <FolderIcon className={classes.icon}/>
-                        Files
+                        Media
                         </Fab>
                         </Link>
                         </div>

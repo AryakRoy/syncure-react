@@ -100,7 +100,7 @@ function NavigationBar() {
                   className="menu"
                 >
                   <Link href="/Dashboard"><MenuItem>Profile</MenuItem></Link>
-                  <Link href="/Files"><MenuItem>Files</MenuItem></Link>
+                  <Link href="/Media"><MenuItem>Files</MenuItem></Link>
                   <Link href="/Passwords"><MenuItem>Passwords</MenuItem></Link>
                   <Link onClick= {logout}><MenuItem>Logout</MenuItem></Link>
                 </Menu>

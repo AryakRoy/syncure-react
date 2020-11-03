@@ -52,7 +52,7 @@ function App() {
       <Route path="/OTPAuth" exact component={OTPAuth} />
         <Route path="/Error" exact component={Error} />
         <Route path="/Passwords" exact component={Passwords} />
-        <Route path="/Files" exact component={Files} />
+        <Route path="/Media" exact component={Files} />
         <Route path="/Dashboard" exact component={Dashboard} />
         <Route path="/ChangePassword" exact component={ChangePassword} />
         <Route path="/UpdateUserDetails" exact component={UpdateUserDetails} />
