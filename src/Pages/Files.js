@@ -13,6 +13,7 @@ import "../Pages-css/Passwords.css"
 import Loading from "../Pages/Loading.js"
 import {useStyles} from "../util.js"
 import "../Pages-css/Passwords.css"
+import FileSaver from "file-saver"
 function Files() {
     const classes = useStyles();
     const [medias, setmedias] = useState([]);
@@ -56,11 +57,13 @@ function Files() {
             url: `https://syncure-app-api.herokuapp.com/api/article/downloadMedia/${name}`,
             headers: { 
               'Authorization': 'Bearer ' + localStorage.getItem('token')
-            }
+            },
+           responseType: 'blob'
         };
         Axios(config)
-        .then((response) => {
-            console.log(response);
+        .then(response => {
+            var blob = new Blob([response.data]);
+            FileSaver.saveAs(blob,name)
             setopen(false);
         })
         .catch((err) => {
